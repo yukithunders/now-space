@@ -1,0 +1,19 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %p.side_header__box__user-name
+        test-user
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          = link_to "#" do
+            %i.fas.fa-edit
+        %li.side-header__box__menu__edit-user
+          = link_to "#" do
+            %i.fas.fa-cog
+  .groups
+    = link_to "#" do
+      .group
+        .group__group-name
+          test1
+        .group__latest-message
+          まだメッセージはありません。
