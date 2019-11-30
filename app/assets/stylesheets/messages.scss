@@ -15,10 +15,20 @@
         width: 100%;
         font-weight: bold;
         &__user-name{
-          color: #FFFFFF;
+          color: #ffffff;
         }
         &__menu{
           display: flex;
+          &__new-group{
+            .group-new{
+              color:#ffffff;
+            }
+          }
+          &__edit-user{
+            .user-edit{
+              color:#ffffff;
+            }
+          }
         }
       }
     }
@@ -27,6 +37,20 @@
       background-color: #2f3e51;
       padding: 20px 20px 0;
       overflow: scroll;
+      .group-link{
+        color: #ffffff;
+        text-decoration: none;
+        .group{
+          margin-bottom: 40px;
+          &__group-name{
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+          &__latest-message{
+            font-size: 11px;
+          }
+        }
+      }
     }
   }
   .chat-main{
@@ -37,11 +61,12 @@
       justify-content: space-between;
       border-bottom: solid 1px #eee;
       overflow: scroll;
+      a:active{color: #38aef0;}
       &__left-box{
         margin-top: 35px;
         &__current_group{
+          color: #000000;
           font-size: 20px;
-          color: #333333;
           margin-bottom:15px;
         }
         &__member-list{
@@ -51,6 +76,9 @@
 
           }
         }
+      }
+      &__edit-link{
+        color:#ffffff;
       }
       &__edit-btn{
         height: 40px;

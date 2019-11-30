@@ -1,19 +1,20 @@
 .chat-side
   .side-header
     .side-header__box
-      %p.side_header__box__user-name
-        test-user
+      .side-header__box__user-name
+        = current_user.name
       %ul.side-header__box__menu
         %li.side-header__box__menu__new-group
-          = link_to "#" do
+          = link_to new_group_path, class: "group-new" do 
             %i.fas.fa-edit
         %li.side-header__box__menu__edit-user
-          = link_to "#" do
+          = link_to edit_user_path(current_user), class: "user-edit" do
             %i.fas.fa-cog
   .groups
-    = link_to "#" do
+    - current_user.groups.each do |group|
       .group
-        .group__group-name
-          test1
-        .group__latest-message
-          まだメッセージはありません。
+        = link_to group_messages_path(group.id) , class: "group-link" do
+          .group__group-name
+            = group.name
+          .group__latest-message
+            = group.show_last_message
